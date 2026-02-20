@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Fruit
   m_EditorClassIdentifier: Assembly-CSharp::ItemFruit
   Name: 
-  ImageUI: {fileID: 0}
+  Price: 20
+  ImageUI: {fileID: 109503038894596790, guid: 421023282117e0f43aa29d1c5d1a9e6a, type: 3}
   IsStackable: 0
   EnergyPoints: 0
