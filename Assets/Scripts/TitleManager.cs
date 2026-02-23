@@ -12,10 +12,12 @@ public class TitleManager : MonoBehaviour
     {
         Invoke(nameof(EnableInput), 0.15f);
     }
+
     private void EnableInput()
     {
         CanInput = true;
     }
+
     private void OnEnable()
     {
         ExitAction.Enable();
@@ -23,6 +25,7 @@ public class TitleManager : MonoBehaviour
         ExitAction.started += ExitGame;
         StartAction.started += StartGame;
     }
+
     private void OnDisable()
     {
         ExitAction.started -= ExitGame;
@@ -31,6 +34,7 @@ public class TitleManager : MonoBehaviour
         ExitAction.Disable();
         StartAction.Disable();
     }
+
     private void ExitGame(InputAction.CallbackContext context)
     {
         if (!CanInput) return;
@@ -40,6 +44,7 @@ public class TitleManager : MonoBehaviour
         Application.Quit();
 #endif
     }
+    
     private void StartGame(InputAction.CallbackContext context)
     {
         if (!CanInput) return;

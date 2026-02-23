@@ -6,7 +6,6 @@ public class UISlotInventory : MonoBehaviour, IPointerClickHandler
 {
     public Image icon;
     public Image selectionBorder;
-
     public ItemBase Item { get; private set; }
     public int Index { get; private set; }
     public Inventory OwnerInventory { get; private set; }
@@ -52,7 +51,6 @@ public class UISlotInventory : MonoBehaviour, IPointerClickHandler
 
     public void SetSelected(bool value)
     {
-        if (selectionBorder != null)
-            selectionBorder.enabled = value;
+        if (selectionBorder != null) selectionBorder.enabled = value;
     }
 }
