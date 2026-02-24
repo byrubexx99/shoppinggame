@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class InventoryUIManager : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class InventoryUIManager : MonoBehaviour
     public Button BuyButton;
     public Button SellButton;
 
+    [Header("Caja de Información del Ítem")]
+    public TextMeshProUGUI ItemNameText;        
+    public TextMeshProUGUI ItemDescriptionText; 
+    public TextMeshProUGUI ItemPriceText;       
+
     private UISlotInventory SelectedSlot;
 
     private void Awake()
@@ -24,6 +30,7 @@ public class InventoryUIManager : MonoBehaviour
     private void Start()
     {
         RefreshUI();
+        ClearInfoBox();
     }
 
     public void SelectSlot(UISlotInventory Slot)
@@ -34,6 +41,60 @@ public class InventoryUIManager : MonoBehaviour
         SelectedSlot.SetSelected(true);
 
         UpdateButtons();
+        UpdateInfoBox(); 
+    }
+
+    public void UpdateInfoBox()
+    {
+        if (SelectedSlot != null && SelectedSlot.Item != null)
+        {
+            string lblName = "Name:";
+            string lblDesc = "Description:";
+            string lblPrice = "Price:";
+
+            if (LocalizationManager.Instance != null)
+            {
+                switch (LocalizationManager.Instance.currentLanguage)
+                {
+                    case Language.Spanish:
+                        lblName = "Nombre:";
+                        lblDesc = "Descripción:";
+                        lblPrice = "Precio:";
+                        break;
+                    case Language.Catalan:
+                        lblName = "Nom:";
+                        lblDesc = "Descripció:";
+                        lblPrice = "Preu:";
+                        break;
+                }
+            }
+
+            if (ItemNameText != null) 
+            {
+                ItemNameText.text = $"<color=yellow><b>{lblName}</b></color> {SelectedSlot.Item.Name}";
+            }
+
+            if (ItemDescriptionText != null) 
+            {
+                ItemDescriptionText.text = $"<color=yellow><b>{lblDesc}</b></color> {SelectedSlot.Item.Description}";
+            }
+            
+            if (ItemPriceText != null) 
+            {
+                ItemPriceText.text = $"<color=yellow><b>{lblPrice}</b></color> {SelectedSlot.Item.Price}"; 
+            }
+        }
+        else
+        {
+            ClearInfoBox();
+        }
+    }
+
+    void ClearInfoBox()
+    {
+        if (ItemNameText != null) ItemNameText.text = "";
+        if (ItemDescriptionText != null) ItemDescriptionText.text = "";
+        if (ItemPriceText != null) ItemPriceText.text = ""; 
     }
 
     public void BuySelectedItem()
@@ -88,6 +149,7 @@ public class InventoryUIManager : MonoBehaviour
 
         SelectedSlot = null;
         UpdateButtons();
+        ClearInfoBox();
     }
 
     void RefreshUI()

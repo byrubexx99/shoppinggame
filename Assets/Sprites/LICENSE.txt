@@ -1,5 +1,10 @@
-background.png
-
-Image generated with AI, using SuperGrok.
-
-LICENSE - CC0
+Gameplay BackGround:
+    Background.png
+    Image generated with AI, using SuperGrok.
+    LICENSE - CC0
+Icon:
+    Icon.png
+    Shopping Icon by Rubén Marín is marked CC0 1.0 Universal
+Title Image:
+    TitleImage.png
+    Outside Shop Image by Rubén Marín is marked CC0 1.0 Universal

@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa5529fd8ddfdc24a8258ac0160122a9, type: 3}
   m_Name: Fruit
   m_EditorClassIdentifier: Assembly-CSharp::ItemFruit
-  Name: 
+  NameEnglish: Apple
+  NameSpanish: Manzana
+  NameCatalan: Poma
+  DescriptionEnglish: A fresh apple that fills your appetite.
+  DescriptionSpanish: Una rica manzana  que te llena el apetito.
+  DescriptionCatalan: Una poma fresca que t'omple la gana.
   Price: 20
   ImageUI: {fileID: -1432906622431855956, guid: 6f58d7743269eae4f87da6c967543aa3,
     type: 3}
