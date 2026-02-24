@@ -354,6 +354,7 @@ GameObject:
   - component: {fileID: 62575997}
   - component: {fileID: 62576001}
   - component: {fileID: 62576002}
+  - component: {fileID: 62576003}
   m_Layer: 5
   m_Name: InventoryShop
   m_TagString: Untagged
@@ -475,9 +476,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 011acbb13de526043b33280d92763725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Inventory
-  StartingItems: []
   Items: []
   Money: 100
+  MoneyUIComponent: {fileID: 62576003}
 --- !u!114 &62576002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,6 +492,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryGridUI
   Inventory: {fileID: 62576001}
+--- !u!114 &62576003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62575995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abcc43ccf705179479fde91e5dcddbbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoneyTextUI
+  MoneyText: {fileID: 2127330163}
 --- !u!1 &69383759
 GameObject:
   m_ObjectHideFlags: 0
@@ -4529,7 +4543,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 200
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4595,7 +4609,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -17.036758, w: 0}
+  m_margin: {x: -351.80713, y: 0, z: -17.036758, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -6014,6 +6028,7 @@ GameObject:
   - component: {fileID: 1971635128}
   - component: {fileID: 1971635132}
   - component: {fileID: 1971635133}
+  - component: {fileID: 1971635134}
   m_Layer: 5
   m_Name: InventoryPlayer
   m_TagString: Untagged
@@ -6135,12 +6150,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 011acbb13de526043b33280d92763725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Inventory
-  StartingItems: []
   Items:
   - {fileID: 11400000, guid: b37247d36ddeea442949107994e48c3b, type: 2}
   - {fileID: 11400000, guid: b37247d36ddeea442949107994e48c3b, type: 2}
   - {fileID: 11400000, guid: b37247d36ddeea442949107994e48c3b, type: 2}
   Money: 100
+  MoneyUIComponent: {fileID: 1971635134}
 --- !u!114 &1971635133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6154,6 +6169,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryGridUI
   Inventory: {fileID: 1971635132}
+--- !u!114 &1971635134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971635126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abcc43ccf705179479fde91e5dcddbbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoneyUI
+  MoneyText: {fileID: 1537411341}
 --- !u!224 &1983404043 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7802270208075848545, guid: d9d39b2e2fc42f842993dd9086c28be5,
@@ -6832,7 +6860,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6898,7 +6926,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -355.2077, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

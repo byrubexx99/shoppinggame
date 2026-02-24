@@ -28,8 +28,7 @@ public class InventoryUIManager : MonoBehaviour
 
     public void SelectSlot(UISlotInventory Slot)
     {
-        if (SelectedSlot != null)
-            SelectedSlot.SetSelected(false);
+        if (SelectedSlot != null) SelectedSlot.SetSelected(false);
 
         SelectedSlot = Slot;
         SelectedSlot.SetSelected(true);
@@ -85,8 +84,7 @@ public class InventoryUIManager : MonoBehaviour
 
     void ClearSelection()
     {
-        if (SelectedSlot != null)
-            SelectedSlot.SetSelected(false);
+        if (SelectedSlot != null) SelectedSlot.SetSelected(false);
 
         SelectedSlot = null;
         UpdateButtons();
@@ -102,15 +100,32 @@ public class InventoryUIManager : MonoBehaviour
     void UpdateButtons()
     {
         if (BuyButton != null)
-            BuyButton.interactable =
-                SelectedSlot != null &&
-                SelectedSlot.OwnerInventory == ShopInventory &&
-                SelectedSlot.Item != null;
-
+        {
+            BuyButton.interactable = false;
+            if (SelectedSlot != null)
+            {
+                if (SelectedSlot.OwnerInventory == ShopInventory)
+                {
+                    if (SelectedSlot.Item != null)
+                    {
+                        BuyButton.interactable = true;
+                    }
+                }
+            }
+        }
         if (SellButton != null)
-            SellButton.interactable =
-                SelectedSlot != null &&
-                SelectedSlot.OwnerInventory == PlayerInventory &&
-                SelectedSlot.Item != null;
+        {
+            SellButton.interactable = false;
+            if (SelectedSlot != null)
+            {
+                if (SelectedSlot.OwnerInventory == PlayerInventory)
+                {
+                    if (SelectedSlot.Item != null)
+                    {
+                        SellButton.interactable = true;
+                    }
+                }
+            }
+        }
     }
 }

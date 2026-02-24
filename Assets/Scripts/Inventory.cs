@@ -3,14 +3,13 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public List<ItemBase> StartingItems = new List<ItemBase>();
     public List<ItemBase> Items = new List<ItemBase>();
-
     public int Money = 100;
+    public MoneyTextUI MoneyUIComponent;
 
-    void Awake()
+    private void Start()
     {
-        Items.AddRange(StartingItems);
+        UpdateMoneyUI();
         Debug.Log("Inventario iniciado con " + Items.Count + " items");
     }
 
@@ -35,12 +34,20 @@ public class Inventory : MonoBehaviour
     public void AddMoney(int Amount)
     {
         Money += Amount;
+
         Debug.Log("Dinero actual: " + Money);
+        UpdateMoneyUI();
     }
 
     public void RemoveMoney(int Amount)
     {
         Money -= Amount;
         Debug.Log("Dinero actual: " + Money);
+        UpdateMoneyUI();
+    }
+
+    void UpdateMoneyUI()
+    {
+        if (MoneyUIComponent != null) MoneyUIComponent.UpdateMoney(Money);
     }
 }

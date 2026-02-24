@@ -27,7 +27,6 @@ public class UISlotInventory : MonoBehaviour, IPointerClickHandler
             Debug.LogWarning("Icon no asignado en slot " + Index);
             return;
         }
-
         if (NewItem != null)
         {
             Debug.Log("Slot " + Index + " muestra: " + NewItem.Name);
@@ -52,7 +51,6 @@ public class UISlotInventory : MonoBehaviour, IPointerClickHandler
 
     public void SetSelected(bool Value)
     {
-        if (SelectionBorder != null)
-            SelectionBorder.enabled = Value;
+        if (SelectionBorder != null) SelectionBorder.enabled = Value;
     }
 }
