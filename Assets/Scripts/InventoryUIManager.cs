@@ -5,16 +5,16 @@ public class InventoryUIManager : MonoBehaviour
 {
     public static InventoryUIManager Instance;
 
-    public Inventory playerInventory;
-    public Inventory shopInventory;
+    public Inventory PlayerInventory;
+    public Inventory ShopInventory;
 
-    public InventoryGridUI playerGrid;
-    public InventoryGridUI shopGrid;
+    public InventoryGridUI PlayerGrid;
+    public InventoryGridUI ShopGrid;
 
-    public Button buyButton;
-    public Button sellButton;
+    public Button BuyButton;
+    public Button SellButton;
 
-    private UISlotInventory selectedSlot;
+    private UISlotInventory SelectedSlot;
 
     private void Awake()
     {
@@ -26,38 +26,38 @@ public class InventoryUIManager : MonoBehaviour
         RefreshUI();
     }
 
-    public void SelectSlot(UISlotInventory slot)
+    public void SelectSlot(UISlotInventory Slot)
     {
-        if (selectedSlot != null)
-            selectedSlot.SetSelected(false);
+        if (SelectedSlot != null)
+            SelectedSlot.SetSelected(false);
 
-        selectedSlot = slot;
-        selectedSlot.SetSelected(true);
+        SelectedSlot = Slot;
+        SelectedSlot.SetSelected(true);
 
         UpdateButtons();
     }
 
     public void BuySelectedItem()
     {
-        if (selectedSlot == null) return;
-        if (selectedSlot.OwnerInventory != shopInventory) return;
-        if (selectedSlot.Item == null) return;
+        if (SelectedSlot == null) return;
+        if (SelectedSlot.OwnerInventory != ShopInventory) return;
+        if (SelectedSlot.Item == null) return;
 
-        ItemBase item = selectedSlot.Item;
+        ItemBase Item = SelectedSlot.Item;
 
-        if (!playerInventory.HasMoney(item.Price))
+        if (!PlayerInventory.HasMoney(Item.Price))
         {
             Debug.Log("No hay dinero suficiente");
             return;
         }
 
-        Debug.Log("Comprando: " + item.Name);
+        Debug.Log("Comprando: " + Item.Name);
 
-        playerInventory.RemoveMoney(item.Price);
-        shopInventory.AddMoney(item.Price);
+        PlayerInventory.RemoveMoney(Item.Price);
+        ShopInventory.AddMoney(Item.Price);
 
-        shopInventory.RemoveItem(item);
-        playerInventory.AddItem(item);
+        ShopInventory.RemoveItem(Item);
+        PlayerInventory.AddItem(Item);
 
         ClearSelection();
         RefreshUI();
@@ -65,19 +65,19 @@ public class InventoryUIManager : MonoBehaviour
 
     public void SellSelectedItem()
     {
-        if (selectedSlot == null) return;
-        if (selectedSlot.OwnerInventory != playerInventory) return;
-        if (selectedSlot.Item == null) return;
+        if (SelectedSlot == null) return;
+        if (SelectedSlot.OwnerInventory != PlayerInventory) return;
+        if (SelectedSlot.Item == null) return;
 
-        ItemBase item = selectedSlot.Item;
+        ItemBase Item = SelectedSlot.Item;
 
-        Debug.Log("Vendiendo: " + item.Name);
+        Debug.Log("Vendiendo: " + Item.Name);
 
-        playerInventory.AddMoney(item.Price);
-        shopInventory.RemoveMoney(item.Price);
+        PlayerInventory.AddMoney(Item.Price);
+        ShopInventory.RemoveMoney(Item.Price);
 
-        playerInventory.RemoveItem(item);
-        shopInventory.AddItem(item);
+        PlayerInventory.RemoveItem(Item);
+        ShopInventory.AddItem(Item);
 
         ClearSelection();
         RefreshUI();
@@ -85,32 +85,32 @@ public class InventoryUIManager : MonoBehaviour
 
     void ClearSelection()
     {
-        if (selectedSlot != null)
-            selectedSlot.SetSelected(false);
+        if (SelectedSlot != null)
+            SelectedSlot.SetSelected(false);
 
-        selectedSlot = null;
+        SelectedSlot = null;
         UpdateButtons();
     }
 
     void RefreshUI()
     {
-        playerGrid.Refresh();
-        shopGrid.Refresh();
+        PlayerGrid.Refresh();
+        ShopGrid.Refresh();
         UpdateButtons();
     }
 
     void UpdateButtons()
     {
-        if (buyButton != null)
-            buyButton.interactable =
-                selectedSlot != null &&
-                selectedSlot.OwnerInventory == shopInventory &&
-                selectedSlot.Item != null;
+        if (BuyButton != null)
+            BuyButton.interactable =
+                SelectedSlot != null &&
+                SelectedSlot.OwnerInventory == ShopInventory &&
+                SelectedSlot.Item != null;
 
-        if (sellButton != null)
-            sellButton.interactable =
-                selectedSlot != null &&
-                selectedSlot.OwnerInventory == playerInventory &&
-                selectedSlot.Item != null;
+        if (SellButton != null)
+            SellButton.interactable =
+                SelectedSlot != null &&
+                SelectedSlot.OwnerInventory == PlayerInventory &&
+                SelectedSlot.Item != null;
     }
 }

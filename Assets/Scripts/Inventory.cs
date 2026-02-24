@@ -3,44 +3,44 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public List<ItemBase> startingItems = new List<ItemBase>();
-    public List<ItemBase> items = new List<ItemBase>();
+    public List<ItemBase> StartingItems = new List<ItemBase>();
+    public List<ItemBase> Items = new List<ItemBase>();
 
     public int Money = 100;
 
     void Awake()
     {
-        items.AddRange(startingItems);
-        Debug.Log("Inventario iniciado con " + items.Count + " items");
+        Items.AddRange(StartingItems);
+        Debug.Log("Inventario iniciado con " + Items.Count + " items");
     }
 
-    public bool AddItem(ItemBase item)
+    public bool AddItem(ItemBase Item)
     {
-        items.Add(item);
-        Debug.Log("Item añadido: " + item.Name);
+        Items.Add(Item);
+        Debug.Log("Item añadido: " + Item.Name);
         return true;
     }
 
-    public void RemoveItem(ItemBase item)
+    public void RemoveItem(ItemBase Item)
     {
-        items.Remove(item);
-        Debug.Log("Item eliminado: " + item.Name);
+        Items.Remove(Item);
+        Debug.Log("Item eliminado: " + Item.Name);
     }
 
-    public bool HasMoney(int amount)
+    public bool HasMoney(int Amount)
     {
-        return Money >= amount;
+        return Money >= Amount;
     }
 
-    public void AddMoney(int amount)
+    public void AddMoney(int Amount)
     {
-        Money += amount;
+        Money += Amount;
         Debug.Log("Dinero actual: " + Money);
     }
 
-    public void RemoveMoney(int amount)
+    public void RemoveMoney(int Amount)
     {
-        Money -= amount;
+        Money -= Amount;
         Debug.Log("Dinero actual: " + Money);
     }
 }

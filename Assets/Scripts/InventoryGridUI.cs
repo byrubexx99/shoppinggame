@@ -2,25 +2,27 @@ using UnityEngine;
 
 public class InventoryGridUI : MonoBehaviour
 {
-    public Inventory inventory;
-    private UISlotInventory[] slots;
+    public Inventory Inventory;
+    private UISlotInventory[] Slots;
 
     void Awake()
     {
-        slots = GetComponentsInChildren<UISlotInventory>();
+        Slots = GetComponentsInChildren<UISlotInventory>();
 
-        for (int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < Slots.Length; i++)
         {
-            slots[i].Setup(inventory, i);
+            Slots[i].Setup(Inventory, i);
         }
     }
 
     public void Refresh()
     {
-        for (int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < Slots.Length; i++)
         {
-            if (i < inventory.items.Count) slots[i].SetItem(inventory.items[i]);
-            else slots[i].SetItem(null);
+            if (i < Inventory.Items.Count)
+                Slots[i].SetItem(Inventory.Items[i]);
+            else
+                Slots[i].SetItem(null);
         }
     }
 }

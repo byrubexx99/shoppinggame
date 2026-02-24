@@ -4,43 +4,44 @@ using UnityEngine.EventSystems;
 
 public class UISlotInventory : MonoBehaviour, IPointerClickHandler
 {
-    public Image icon;
-    public Image selectionBorder;
+    public Image Icon;
+    public Image SelectionBorder;
+
     public ItemBase Item { get; private set; }
     public int Index { get; private set; }
     public Inventory OwnerInventory { get; private set; }
 
-    public void Setup(Inventory owner, int index)
+    public void Setup(Inventory Owner, int IndexValue)
     {
-        OwnerInventory = owner;
-        Index = index;
+        OwnerInventory = Owner;
+        Index = IndexValue;
         SetItem(null);
     }
 
-    public void SetItem(ItemBase item)
+    public void SetItem(ItemBase NewItem)
     {
-        Item = item;
+        Item = NewItem;
 
-        if (icon == null)
+        if (Icon == null)
         {
             Debug.LogWarning("Icon no asignado en slot " + Index);
             return;
         }
 
-        if (item != null)
+        if (NewItem != null)
         {
-            Debug.Log("Slot " + Index + " muestra: " + item.Name);
-            icon.sprite = item.ImageUI;
-            icon.enabled = true;
+            Debug.Log("Slot " + Index + " muestra: " + NewItem.Name);
+            Icon.sprite = NewItem.ImageUI;
+            Icon.enabled = true;
         }
         else
         {
-            icon.sprite = null;
-            icon.enabled = false;
+            Icon.sprite = null;
+            Icon.enabled = false;
         }
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerClick(PointerEventData EventData)
     {
         if (Item != null)
         {
@@ -49,8 +50,9 @@ public class UISlotInventory : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    public void SetSelected(bool value)
+    public void SetSelected(bool Value)
     {
-        if (selectionBorder != null) selectionBorder.enabled = value;
+        if (SelectionBorder != null)
+            SelectionBorder.enabled = Value;
     }
 }
