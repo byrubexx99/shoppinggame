@@ -11,11 +11,13 @@ public class GameManager : MonoBehaviour
         ExitAction.Enable();
         ExitAction.started += ExitGame;
     }
+
     private void OnDisable()
     {
         ExitAction.started -= ExitGame;
         ExitAction.Disable();
     }
+    
     private void ExitGame(InputAction.CallbackContext context)
     {
 #if UNITY_EDITOR

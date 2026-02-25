@@ -13,6 +13,7 @@ public class EndingManager : MonoBehaviour
         ExitAction.started += ExitGame;
         RestartAction.started += Restart;
     }
+
     private void OnDisable()
     {
         ExitAction.started -= ExitGame;
@@ -20,6 +21,7 @@ public class EndingManager : MonoBehaviour
         ExitAction.Disable();
         RestartAction.Disable();
     }
+
     private void ExitGame(InputAction.CallbackContext context)
     {
         DisableAllInput();
@@ -29,11 +31,13 @@ public class EndingManager : MonoBehaviour
         Application.Quit();
 #endif
     }
+
     private void Restart(InputAction.CallbackContext context)
     {
         DisableAllInput();
         SceneManager.LoadScene("Title");
     }
+    
     private void DisableAllInput()
     {
         ExitAction.Disable();
