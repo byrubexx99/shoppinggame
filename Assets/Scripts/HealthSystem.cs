@@ -3,20 +3,20 @@ using UnityEngine.UI;
 
 public class HealthSystem : MonoBehaviour
 {
-    public Slider healthSlider;  
+    public Slider HealthSlider;  
    
     void Start()
     {
-        healthSlider.value = 100;
+        HealthSlider.value = 100;
     }
     
     public void QuitHealth(float damage)
     {
-        healthSlider.value -= damage;
+        HealthSlider.value -= damage;
     }
 
     public void Heal(float life)
     { 
-        if (healthSlider.value <=100) healthSlider.value += life;
+        if (HealthSlider.value <=100) HealthSlider.value += life;
     }
 }

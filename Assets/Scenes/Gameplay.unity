@@ -1587,7 +1587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c46ef5df90f65cf439bbaf574319cdf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
-  healthSlider: {fileID: 786593786}
+  HealthSlider: {fileID: 786593786}
 --- !u!4 &365026991
 Transform:
   m_ObjectHideFlags: 0
