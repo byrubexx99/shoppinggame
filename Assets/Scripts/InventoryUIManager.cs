@@ -154,6 +154,11 @@ public class InventoryUIManager : MonoBehaviour
             HealthSystem.Heal(10);
 
 
+        } 
+        if (SelectedSlot.Item is ItemPotion potion)
+        {
+            PlayerInventory.RemoveItem(potion);
+            HealthSystem.Heal(100);
         }
         ClearSelection();
         RefreshUI();
