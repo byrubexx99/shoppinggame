@@ -37,6 +37,7 @@ public class UISlotInventory : MonoBehaviour, IPointerClickHandler
         {
             Icon.sprite = null;
             Icon.enabled = false;
+            SetSelected(false);
         }
     }
 

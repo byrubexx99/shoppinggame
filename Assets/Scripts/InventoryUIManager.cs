@@ -173,7 +173,9 @@ public class InventoryUIManager : MonoBehaviour
     {
         PlayerGrid.Refresh();
         ShopGrid.Refresh();
+        SelectedSlot = null;
         UpdateButtons();
+        ClearInfoBox();
     }
 
     void UpdateButtons()

@@ -12,7 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ef1103df1478c479a43dcccc189e25, type: 3}
   m_Name: Potion
   m_EditorClassIdentifier: Assembly-CSharp::ItemPotion
-  Name: 
-  ImageUI: {fileID: 0}
+  NameEnglish: 
+  NameSpanish: 
+  NameCatalan: 
+  DescriptionEnglish: 
+  DescriptionSpanish: 
+  DescriptionCatalan: 
+  Price: 30
+  ImageUI: {fileID: -2880734798192188640, guid: c2428b1045b361540b45106a9ab2be24,
+    type: 3}
   IsStackable: 0
   HealthPoints: 0

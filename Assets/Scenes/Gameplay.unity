@@ -551,7 +551,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 011acbb13de526043b33280d92763725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Inventory
-  Items: []
+  Items:
+  - {fileID: 11400000, guid: e933cf0874e0f3846a9660bd5d9ca982, type: 2}
+  - {fileID: 11400000, guid: 88aa94dda7230db4e808b23651af8d07, type: 2}
+  - {fileID: 11400000, guid: 88aa94dda7230db4e808b23651af8d07, type: 2}
+  - {fileID: 11400000, guid: 432a00565460ce543ae9dd17d1ce1a81, type: 2}
+  - {fileID: 11400000, guid: 432a00565460ce543ae9dd17d1ce1a81, type: 2}
+  - {fileID: 11400000, guid: 88aa94dda7230db4e808b23651af8d07, type: 2}
+  - {fileID: 11400000, guid: e933cf0874e0f3846a9660bd5d9ca982, type: 2}
+  - {fileID: 11400000, guid: e933cf0874e0f3846a9660bd5d9ca982, type: 2}
+  - {fileID: 11400000, guid: b37247d36ddeea442949107994e48c3b, type: 2}
+  - {fileID: 11400000, guid: b37247d36ddeea442949107994e48c3b, type: 2}
+  - {fileID: 11400000, guid: b37247d36ddeea442949107994e48c3b, type: 2}
   Money: 100
   MoneyUIComponent: {fileID: 62576003}
 --- !u!114 &62576002
@@ -8663,6 +8674,11 @@ MonoBehaviour:
   Items:
   - {fileID: 11400000, guid: b37247d36ddeea442949107994e48c3b, type: 2}
   - {fileID: 11400000, guid: b37247d36ddeea442949107994e48c3b, type: 2}
+  - {fileID: 11400000, guid: 432a00565460ce543ae9dd17d1ce1a81, type: 2}
+  - {fileID: 11400000, guid: b37247d36ddeea442949107994e48c3b, type: 2}
+  - {fileID: 11400000, guid: 432a00565460ce543ae9dd17d1ce1a81, type: 2}
+  - {fileID: 11400000, guid: 88aa94dda7230db4e808b23651af8d07, type: 2}
+  - {fileID: 11400000, guid: 88aa94dda7230db4e808b23651af8d07, type: 2}
   - {fileID: 11400000, guid: b37247d36ddeea442949107994e48c3b, type: 2}
   Money: 100
   MoneyUIComponent: {fileID: 1971635134}

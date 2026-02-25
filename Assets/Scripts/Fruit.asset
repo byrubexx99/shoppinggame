@@ -19,7 +19,6 @@ MonoBehaviour:
   DescriptionSpanish: Una rica manzana  que te llena el apetito.
   DescriptionCatalan: Una poma fresca que t'omple la gana.
   Price: 20
-  ImageUI: {fileID: -1432906622431855956, guid: 6f58d7743269eae4f87da6c967543aa3,
-    type: 3}
+  ImageUI: {fileID: 7293598183456022363, guid: 56b73cb9133bc764fb94ddd07f15f5a5, type: 3}
   IsStackable: 0
   EnergyPoints: 0
