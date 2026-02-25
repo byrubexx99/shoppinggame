@@ -591,9 +591,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoneyTextUI
   MoneyText: {fileID: 2127330163}
-  EnglishText: 'Money: '
-  SpanishText: 'Dinero: '
-  CatalanText: 'Diners: '
+  EnglishText: 'Shop Money: '
+  SpanishText: 'Dinero de la tienda: '
+  CatalanText: 'Diners de la tenda: '
 --- !u!1 &64124087
 GameObject:
   m_ObjectHideFlags: 0
@@ -8708,9 +8708,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoneyUI
   MoneyText: {fileID: 1537411341}
-  EnglishText: 'Money: '
-  SpanishText: 'Dinero: '
-  CatalanText: 'Diners: '
+  EnglishText: 'Player Money: '
+  SpanishText: 'Dinero del jugador: '
+  CatalanText: 'Diners del jugador: '
 --- !u!224 &1983404043 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7802270208075848545, guid: d9d39b2e2fc42f842993dd9086c28be5,
