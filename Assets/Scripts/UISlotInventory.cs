@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class UISlotInventory : MonoBehaviour, IPointerClickHandler
+public class UISlotInventory : MonoBehaviour, IPointerClickHandler, IDropHandler
 {
     public Image Icon;
     public Image SelectionBorder;
@@ -10,6 +10,7 @@ public class UISlotInventory : MonoBehaviour, IPointerClickHandler
     public ItemBase Item { get; private set; }
     public int Index { get; private set; }
     public Inventory OwnerInventory { get; private set; }
+    public int SlotIndex;
 
     public void Setup(Inventory Owner, int IndexValue)
     {
@@ -53,5 +54,13 @@ public class UISlotInventory : MonoBehaviour, IPointerClickHandler
     public void SetSelected(bool Value)
     {
         if (SelectionBorder != null) SelectionBorder.enabled = Value;
+    }
+
+    public void OnDrop(PointerEventData EventData)
+    {
+        GameObject DraggedObject = EventData.pointerDrag;
+        UIDragItem DragItem = DraggedObject.GetComponent<UIDragItem>();
+
+        if (DragItem != null) DragItem.ParentAfterDrag = transform;
     }
 }
