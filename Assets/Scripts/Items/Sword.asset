@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ceea121e7c5434f8a294dd35c481d4, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: Assembly-CSharp::ItemKey
-  NameEnglish: 
-  NameSpanish: 
-  NameCatalan: 
-  DescriptionEnglish: 
-  DescriptionSpanish: 
-  DescriptionCatalan: 
+  NameEnglish: Sword
+  NameSpanish: Espada
+  NameCatalan: Espasa
+  DescriptionEnglish: A sharp blade forged for battle.
+  DescriptionSpanish: Una hoja afilada forjada para el combate.
+  DescriptionCatalan: Una fulla esmolada forjada per al combat.
   Price: 50
   ImageUI: {fileID: 712035800519618848, guid: 3b43723931b2e1c4d85f2693cc6fa3ef, type: 3}
   IsStackable: 0
-  DoorToOpen: 0
+  Damage: 0

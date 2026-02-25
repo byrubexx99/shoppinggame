@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Item", menuName = "Inventory System/Items/Key")]
-public class ItemKey : ItemBase
+public class ItemSword : ItemBase
 {
-    public int DoorToOpen;
+    public int Damage;
 }

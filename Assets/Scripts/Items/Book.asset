@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29087c1df57eb4e47bfe0296b013fae6, type: 3}
   m_Name: Book
   m_EditorClassIdentifier: Assembly-CSharp::ItemBook
-  NameEnglish: 
-  NameSpanish: 
-  NameCatalan: 
-  DescriptionEnglish: 
-  DescriptionSpanish: 
-  DescriptionCatalan: 
+  NameEnglish: Book
+  NameSpanish: Libro
+  NameCatalan: Llibre
+  DescriptionEnglish: An old book filled with forgotten secrets.
+  DescriptionSpanish: Un libro antiguo lleno de secretos olvidados.
+  DescriptionCatalan: Un llibre antic ple de secrets oblidats.
   Price: 15
   ImageUI: {fileID: 2353571312451627304, guid: 2011ffa1086db79489b0141259f21a7e, type: 3}
   IsStackable: 0
