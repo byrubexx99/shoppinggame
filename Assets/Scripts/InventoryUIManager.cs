@@ -5,7 +5,7 @@ using TMPro;
 public class InventoryUIManager : MonoBehaviour
 {
     public static InventoryUIManager Instance;
-
+    public HealthSystem HealthSystem;
     public Inventory PlayerInventory;
     public Inventory ShopInventory;
 
@@ -14,6 +14,7 @@ public class InventoryUIManager : MonoBehaviour
 
     public Button BuyButton;
     public Button SellButton;
+    public Button UseButton;
 
     [Header("Caja de Información del Ítem")]
     public TextMeshProUGUI ItemNameText;        
@@ -143,6 +144,25 @@ public class InventoryUIManager : MonoBehaviour
         RefreshUI();
     }
 
+    public void ItemHeal() {
+
+        if (SelectedSlot == null) return;
+        if (SelectedSlot.OwnerInventory != PlayerInventory) return;
+        if (SelectedSlot.Item == null) return; 
+
+        if (SelectedSlot.Item is ItemFruit fruit)
+        {
+            
+            PlayerInventory.RemoveItem(fruit);
+            HealthSystem.Heal(10);
+
+
+        }
+        ClearSelection();
+        RefreshUI();
+
+
+    }
     void ClearSelection()
     {
         if (SelectedSlot != null) SelectedSlot.SetSelected(false);

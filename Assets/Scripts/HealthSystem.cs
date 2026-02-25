@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class HealthSystem : MonoBehaviour
 {
     public Slider healthSlider;  
-    
+   
     void Start()
     {
         healthSlider.value = 100;
