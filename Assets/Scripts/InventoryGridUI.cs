@@ -19,10 +19,8 @@ public class InventoryGridUI : MonoBehaviour
     {
         for (int i = 0; i < Slots.Length; i++)
         {
-            if (i < Inventory.Items.Count)
-                Slots[i].SetItem(Inventory.Items[i]);
-            else
-                Slots[i].SetItem(null);
+            if (i < Inventory.Items.Count) Slots[i].SetItem(Inventory.Items[i]);
+            else Slots[i].SetItem(null);
         }
     }
 }

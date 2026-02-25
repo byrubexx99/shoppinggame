@@ -85,10 +85,7 @@ public class InventoryUIManager : MonoBehaviour
                 ItemPriceText.text = $"<color=yellow><b>{lblPrice}</b></color> {SelectedSlot.Item.Price}"; 
             }
         }
-        else
-        {
-            ClearInfoBox();
-        }
+        else ClearInfoBox();
     }
 
     void ClearInfoBox()
