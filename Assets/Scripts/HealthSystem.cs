@@ -9,17 +9,14 @@ public class HealthSystem : MonoBehaviour
     {
         healthSlider.value = 100;
     }
-
-   public void QuitHealth(float damage)
-   { 
-
+    
+    public void QuitHealth(float damage)
+    {
         healthSlider.value -= damage;
-
-   } 
-    public void Heal(float life)
-    { 
-        if (healthSlider.value <=100)
-        healthSlider.value += life;
     }
 
+    public void Heal(float life)
+    { 
+        if (healthSlider.value <=100) healthSlider.value += life;
+    }
 }
